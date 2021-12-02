@@ -1,0 +1,20 @@
+name: luacheck reviewdog
+on: [push, pull_request]
+jobs:
+  luacheck:
+    name: runner / luacheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: puria/action-luacheck@v1
+        with:
+          # luacheck is run then on the specified working directory relative to the root project
+          workdir: src
+          # pass optional flags to luacheck
+          luacheck_flasg: --std lua54
+          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
+          reporter: github-pr-review
+          # Change reporter level if you need.
+          # GitHub Status Check won't become failure with warning.
+          level: warning
+
