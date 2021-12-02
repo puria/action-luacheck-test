@@ -13,7 +13,4 @@ jobs:
           workdir: src
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
           reporter: github-pr-review
-          # Change reporter level if you need.
-          # GitHub Status Check won't become failure with warning.
-          level: warning
 
