@@ -10,8 +10,6 @@ jobs:
         with:
           # luacheck is run then on the specified working directory relative to the root project
           workdir: src
-          # pass optional flags to luacheck
-          luacheck_flags: "--std lua54"
           # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
           reporter: github-pr-review
           # Change reporter level if you need.
