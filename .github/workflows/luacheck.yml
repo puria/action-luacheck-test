@@ -1,0 +1,16 @@
+name: luacheck reviewdog
+on: [push, pull_request]
+jobs:
+  luacheck:
+    name: runner / luacheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: puria/action-luacheck@v1
+        with:
+          github_token: '${{ github.token }}'
+          # luacheck is run then on the specified working directory relative to the root project
+          workdir: src
+          # Change reviewdog reporter if you need [github-pr-check,github-check,github-pr-review].
+          reporter: github-pr-review
+
